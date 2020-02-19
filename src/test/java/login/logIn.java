@@ -20,12 +20,12 @@ public class logIn {
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "/Users/aliciavalladares/Documents/Workspace/Drivers/chromedriver");
         driver = new ChromeDriver();
+        driver.manage().window().getSize();
+        driver.get("https://www.zara.com/es/en/");
     }
 
     @Test
-    public void testDocker() throws InterruptedException {
-        driver.manage().window().getSize();
-        driver.get("https://www.zara.com/es/en/");
+    public void login() throws InterruptedException {
         driver.findElement(By.linkText("LOG IN")).click();
 
         Thread.sleep(5000);
@@ -34,8 +34,6 @@ public class logIn {
 
         Thread.sleep(5000);
         driver.findElement(By.id("login-button")).click();
-
-        //assertEquals(3, driver.findElement(By.className("news-card")).getSize());
     }
 
     private CharSequence decodeUser(String encodedUser) {
