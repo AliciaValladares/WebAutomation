@@ -113,3 +113,4 @@ bazel-testlogs
 
 /.vscode/
 /.scannerwork/
+src/test/java/encription
